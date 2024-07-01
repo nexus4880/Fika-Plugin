@@ -38,7 +38,8 @@
       <HintPath>..\References\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition=" '$(OS)' == 'Windows_NT' ">
-    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;Y:\Users\Attacker\Downloads\SPT\BepInEx\plugins&quot;" />
+    <Exec Command="call ../Properties/build/postbuild-core.bat &quot;$(TargetPath)&quot; &quot;$(ProjectDir)&quot;" />
   </Target>
 </Project>
